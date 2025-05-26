@@ -1,7 +1,7 @@
 import React from 'react';
 import PromptSuggestionButton from './PromptSuggestionButton';
 
-const PromptSuggestionsRow = () => {
+const PromptSuggestionsRow = ({ onPromptClick }) => {
   const prompts = [
     "What is your educational background?",
     "Tell me about your work experience.",
@@ -14,7 +14,16 @@ const PromptSuggestionsRow = () => {
   return (
     <div className="prompt-suggestions-row">
       {prompts.map((prompt, index) => (
-        <PromptSuggestionButton key={index} prompt={prompt} />
+        <PromptSuggestionButton 
+          key={index} 
+          prompt={prompt} 
+          onClick={(selectedPrompt) => {
+            console.log(`Prompt suggestion clicked: ${selectedPrompt}`);
+            if (onPromptClick) {
+              onPromptClick(selectedPrompt); // Delegate handling to parent
+            }
+          }}
+        />
       ))}
     </div>
   );
