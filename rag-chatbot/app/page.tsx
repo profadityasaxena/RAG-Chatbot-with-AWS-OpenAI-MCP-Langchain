@@ -29,9 +29,11 @@ const Home = () => {
         ) : (
           <>
             {/* Map messages onto text bubbles */}
-            {messages.map((m, i) => (
-              <Bubble key={i} message={m} />
+            {messages.map((message, index) => (
+                <Bubble key={`message-${index}`} message={message} />
             ))}
+
+            {/* If the last message is from the user, show a loading bubble */}
 
             {/* Show animated loading bubble while waiting for reply */}
             {isLoading && <LoadingBubble />}
