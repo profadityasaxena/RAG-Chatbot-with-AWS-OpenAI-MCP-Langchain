@@ -1,4 +1,5 @@
 import React from "react";
+import ReactMarkdown from "react-markdown";
 import type { Message } from "ai/react";
 
 type BubbleProps = {
@@ -6,9 +7,12 @@ type BubbleProps = {
 };
 
 const Bubble = ({ message }: BubbleProps) => {
+  const isUser = message.role === "user";
+
   return (
-    <div className="bubble">
-      <strong>{message.role === "user" ? "You" : "Bot"}:</strong> {message.content}
+    <div className={`bubble ${isUser ? "user" : "assistant"}`}>
+      <strong>{isUser ? "You" : "Bot"}:</strong>
+      <ReactMarkdown>{message.content}</ReactMarkdown>
     </div>
   );
 };

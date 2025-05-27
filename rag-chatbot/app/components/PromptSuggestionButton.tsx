@@ -6,7 +6,9 @@ const PromptSuggestionButton = ({ prompt, onClick }) => {
       className="prompt-suggestion-button"
       onClick={() => {
         console.log(`Prompt suggestion clicked: ${prompt}`);
-        if (onClick) onClick(prompt);
+        if (typeof onClick === 'function') {
+          onClick(prompt);
+        }
       }}
     >
       {prompt}

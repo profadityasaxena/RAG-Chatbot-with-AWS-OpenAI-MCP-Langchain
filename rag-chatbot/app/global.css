@@ -1,5 +1,19 @@
-* {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+/* 🖤 Neutral Gradient Palette */
+:root {
+    --ultra-light: #F9FAFB;
+    --pale-grey: #F3F4F6;
+    --light-silver: #E5E7EB;
+    --cool-silver: #D1D5DB;
+    --steel-gray: #9CA3AF;
+    --ash-gray: #6B7280;
+    --gunmetal: #4B5563;
+    --charcoal: #374151;
+    --dark-charcoal: #111827;
+  }
+  
+  /* Base Reset */
+  * {
+    font-family: "Verdana", Geneva, Tahoma, sans-serif;
     box-sizing: border-box;
   }
   
@@ -10,20 +24,20 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('./assets/repeating-background-3.png');
-    background-size: cover;
+    background: var(--ultra-light);
   }
   
   main {
     width: 80vw;
     height: 80vh;
     padding: 50px;
-    background: linear-gradient(to bottom right, #f0f0f0, #e0e0e0); /* ✅ fixed invalid background-color */
+    background: linear-gradient(to bottom right, var(--ultra-light), var(--pale-grey));
     border-radius: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
   }
   
   section {
@@ -33,12 +47,12 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    padding: 0 10px;
+    padding: 0 16px;
   }
   
   .starter-text {
     font-size: 1rem;
-    color: #333;
+    color: var(--gunmetal);
     margin-bottom: 20px;
     text-align: center;
   }
@@ -54,12 +68,13 @@
     width: 100%;
     height: 50px;
     border-radius: 10px;
-    border: 5px solid #ccc;
+    border: 2px solid var(--steel-gray);
     padding: 10px;
     font-size: 1rem;
     margin-bottom: 20px;
-    overflow: hidden;
     font-family: 'Courier New', Courier, monospace;
+    background: white;
+    color: var(--dark-charcoal);
   }
   
   .question-submit {
@@ -67,12 +82,13 @@
     height: 50px;
     border-radius: 10px;
     border: none;
-    background-color: #007BFF;
+    background-color: var(--charcoal);
     color: white;
     font-size: 1rem;
     cursor: pointer;
   }
   
+  /* Loader */
   .loader {
     display: flex;
     justify-content: center;
@@ -80,65 +96,70 @@
     gap: 8px;
     height: 40px;
     padding: 10px 16px;
-    background-color: #f0f0f0;
+    background-color: var(--light-silver);
     border-radius: 20px;
     width: fit-content;
     margin: 10px auto;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   }
   
   .loader span {
     width: 8px;
     height: 8px;
-    background-color: #555;
+    background-color: var(--dark-charcoal);
     border-radius: 50%;
     display: inline-block;
     animation: bubble 1.4s infinite ease-in-out both;
   }
   
-  .loader span:nth-child(1) {
-    animation-delay: -0.32s;
-  }
-  
-  .loader span:nth-child(2) {
-    animation-delay: -0.16s;
-  }
-  
-  .loader span:nth-child(3) {
-    animation-delay: 0s;
-  }
+  .loader span:nth-child(1) { animation-delay: -0.32s; }
+  .loader span:nth-child(2) { animation-delay: -0.16s; }
+  .loader span:nth-child(3) { animation-delay: 0s; }
   
   @keyframes bubble {
-    0%, 80%, 100% {
-      transform: scale(0.3);
-      opacity: 0.3;
-    }
-    40% {
-      transform: scale(1);
-      opacity: 1;
-    }
+    0%, 80%, 100% { transform: scale(0.3); opacity: 0.3; }
+    40% { transform: scale(1); opacity: 1; }
   }
   
-  /* ✅ FIXED: Bubble is now a message container, not a floating dot */
+  /* Chat Bubbles */
   .bubble {
-    max-width: 80%;
-    margin: 10px;
-    padding: 12px 16px;
+    max-width: 85%;
+    margin: 12px 0;
+    padding: 16px;
     border-radius: 20px;
-    background-color: #007BFF;
-    color: white;
     font-size: 1rem;
-    align-self: flex-start;
+    line-height: 1.6;
+    white-space: pre-wrap;
     word-wrap: break-word;
   }
   
   .bubble.user {
-    background-color: #DCF8C6;
-    color: black;
+    background-color: var(--charcoal);
+    color: white;
     align-self: flex-end;
   }
   
-  /* ✅ Prompt suggestion row & buttons */
+  .bubble.assistant {
+    background-color: var(--steel-gray);
+    color: white;
+    align-self: flex-start;
+  }
+  
+  /* Markdown Content */
+  .bubble ul, .bubble ol {
+    padding-left: 1.5em;
+    margin: 0.5em 0;
+  }
+  
+  .bubble li {
+    margin-bottom: 0.4em;
+  }
+  
+  .bubble strong {
+    font-weight: bold;
+  }
+  
+  /* Prompt Suggestions */
   .prompt-suggestions-row {
     display: flex;
     flex-wrap: wrap;
@@ -150,13 +171,17 @@
   .prompt-suggestion-button {
     padding: 10px 14px;
     font-size: 0.9rem;
-    background-color: #eee;
-    border: 1px solid #ccc;
+    background-color: var(--cool-silver);
+    border: none;
     border-radius: 8px;
+    color: var(--dark-charcoal);
     cursor: pointer;
     transition: background 0.2s ease;
   }
   
   .prompt-suggestion-button:hover {
-    background-color: #ddd;
+    background-color: var(--ash-gray);
+    color: white;
   }
+
+  

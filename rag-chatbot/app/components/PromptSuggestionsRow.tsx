@@ -17,10 +17,10 @@ const PromptSuggestionsRow = ({ onPromptClick }) => {
         <PromptSuggestionButton 
           key={index} 
           prompt={prompt} 
-          onClick={(selectedPrompt) => {
-            console.log(`Prompt suggestion clicked: ${selectedPrompt}`);
-            if (onPromptClick) {
-              onPromptClick(selectedPrompt); // Delegate handling to parent
+          onClick={() => {
+            console.log(`Prompt suggestion clicked: ${prompt}`);
+            if (typeof onPromptClick === 'function') {
+              onPromptClick(prompt);
             }
           }}
         />
