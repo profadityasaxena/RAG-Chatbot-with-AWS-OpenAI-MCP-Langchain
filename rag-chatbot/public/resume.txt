@@ -1,0 +1,154 @@
+Aditya Saxena, MSc, PMP
+Cloud & AI Strategist | Full Stack Engineer | DevOps |Project Management Professional | Professor
+
+[Website] • [LinkedIn] • [GitHub]
+Email: iam_adisxn@outlook.com • Phone: (437) 848-9595 | (437) 410-9696
+
+Executive Summary
+Professional Acumen: Project Management Professional (PMP) with 12+ years of cross-sector experience leading cloud, AI/ML, and software development initiatives. Adept at managing full project lifecycles in Agile and hybrid environments, delivering scalable solutions for enterprise clients, government contracts, and academic institutions. Proven track record of transforming strategic goals into high-impact technical deliverables.
+
+Technical Expertise: Hands-on architect and engineer with deep proficiency in cloud platforms (AWS, GCP, Azure), full-stack development (React, Node.js, Next.js), and AI/ML technologies (GPT, Transformers, PyTorch, TensorFlow). Specializes in building end-to-end data pipelines, deploying containerized microservices, and implementing secure, CI/CD-driven development environments.
+
+Strategic Leadership & Innovation: Highly Skilled Presenter, Negotiator, Accomplished educator and technology strategist shaping next-gen talent and solutions through academic leadership, industry collaboration, and generative AI innovation. Skilled in grant writing, stakeholder engagement, and aligning technology adoption with organizational goals. Actively contribute to community development through workshops with Google and NVIDIA.
+
+Technical Skills
+Artificial Intelligence and Machine Learning:
+Proficient in supervised and unsupervised learning, deep learning (CNNs, RNNs, Transformers, attention mechanisms), and natural language processing (BERT, GPT, sentiment analysis, text classification). Experienced with Generative AI (RAG, ReAct, LLM fine-tuning), and skilled in Python, TensorFlow, PyTorch, and Scikit-learn.
+
+Data Science:
+Experienced in data wrangling, statistical analysis, and exploratory data analysis (EDA) using Python, Pandas, NumPy, and Matplotlib. Proficient in building end-to-end data pipelines, developing machine learning models, and performing A/B testing, clustering, and regression analysis. Skilled in SQL, data visualization tools (Tableau, Power BI), and deploying models using Flask or FastAPI. Knowledge of time series forecasting, dimensionality reduction (PCA, t-SNE), and big data processing with Spark.
+
+Full Stack Software Engineering:
+Experienced in full stack development using Python, JavaScript, React, Node.js, and MongoDB, with a focus on building scalable web and mobile applications using Next.js and Tailwind CSS. Proficient in backend architecture, RESTful APIs, authentication (JWT, OAuth2), DevOps, software security, CI/CD pipelines (GitHub Actions, Cloud Build), containerization (Docker), and automated testing (Jest, Cypress).
+
+Cloud Computing:
+Proficient in deploying and managing applications on cloud platforms including Google Cloud Platform (GCP) and Amazon Web Services (AWS). Skilled in designing CI/CD pipelines using GitHub Actions and Cloud Build, containerization with Docker, and infrastructure provisioning via Terraform. Experienced with cloud-native services such as S3 and Lambda. Adept with open-source tools including Prometheus, Grafana, Kubernetes, Helm, and the ELK Stack (Elasticsearch, Logstash, Kibana) for monitoring, logging, and security. Familiar with securing cloud environments using IAM policies, VPC configurations, and role-based access control (RBAC).
+
+Project Management:
+Certified Project Management Professional (PMP) with experience leading cross-functional teams in Agile and hybrid environments. Skilled in project scoping, scheduling, risk management, stakeholder communication, and delivery of cloud-native and AI/ML-driven solutions using tools like JIRA, Confluence, Microsoft Project, and Asana.
+
+Education
+MicroMasters in Statistics and Data Science
+Massachusetts Institute of Technology (MITx) | September 2024 – Present
+Grade: Pass (No grades are assigned for these courses)
+Project 1: Automatic Review Analyzer – Explored linear classification using Perceptron, Pegasos, and feature engineering for sentiment analysis.
+Project 2: Digit Recognition with MNIST – Applied regression, SVM, softmax, PCA, and kernel methods for image classification.
+Project 3: Collaborative Filtering using Gaussian Mixtures – Implemented the EM algorithm and mixture models for recommendation systems.
+Project 4: Overlapping Multi-Digit MNIST – Trained MLP and CNN models for multi-label digit recognition using PyTorch.
+Project 5: Text-Based Game with Reinforcement Learning – Developed RL agents using Q-learning and DQN to learn control policies in partially observable environments.
+
+Certificate in Practical Data Science and Machine Learning
+Toronto Metropolitan University | September 2024 – August 2025
+Grade: A+
+Projects 1: AD ASTRA: A Generative AI Framework for Policy Mapping, Validation, and Scoring in Multi-Cloud Security Compliance (on going)
+Projects 2: MovieLens Analytics – Scalable Recommendation System Using Hadoop and Apache Spark
+
+Certificate in Project Management for Technical Professionals
+Toronto Metropolitan University | September 2023 – April 2024
+Grade: A+
+Project 1: The Role of Project Managers in Cloud Computing and ERP Systems
+Project 2: An Introduction to SAP and SAP HANA: Architecture, Capabilities, and Integration Strategies for Modern Enterprise Systems
+
+Graduate Certificate in Database Application Development
+Seneca Polytechnic | September 2018 – April 2019
+Grade: A
+Project 1: CareConnect is a cloud-native, microservices-based app built with to help Canadians find and book family doctors.
+Project 2: FinTrack – A PCI-DSS Compliant Modern Banking & Finance Dashboard Application Built with Next.js 
+
+Graduate Certificate in Information Technology Project Management
+Seneca Polytechnic | September 2018 – April 2019
+Grade: A
+Project 1: Blockchain Technology and Economics – Exploring the Foundations and Problem-Solving Capabilities of Blockchain.
+Project 2: FinTrack – A Modern Banking & Finance Dashboard Application Built with Next.js 
+
+Master of Science / Post Graduate Diploma in Computer Science
+University of Bristol | September 2011 – September 2013 
+Grade: B
+Project 1: BitBot – An Intelligent Robotic Tutor for Teaching Programming Concepts to Students (Best Computer Science Project Award)
+Project 2: DataMotor – A platform for RFID based carbon footprinting of supply chains
+
+Bachelor of Engineering
+Panjab University, Chandigarh | April 2005 - March2009
+Grade: B+
+Project 1: PyNSE: A Python-Based Simulator for Solving 2D Incompressible Navier–Stokes Equations in Complex Geometries
+Project 2: BioHydroSim: A Python-Based Simulation Model for Hydrogen Generation from Biomass Gasification
+
+Work Experience
+
+Faculty Member 
+Loyalist College – Toronto, Ontario | May 2023 – Present | (https://www.loyalistcollege.com)  
+•	Designed and delivered project-based courses in Cloud Computing, Software Engineering, Project Management, and Data Science, Emerging Technologies integrating cloud platforms, AI/ML workflows, and Agile methodologies to enhance student engagement and industry readiness. Mentored over 1,000 students and contributed to curriculum innovation aligned with emerging technology trends.
+•	Supervised student teams in building cloud-native applications leveraging Microservices and Serverless Architectures, with a strong emphasis on DevOps practices and cloud security compliance. Capstone projects included full-stack React/Next.js web platforms, React Native mobile apps, and enterprise-grade applications modeled on real-world use cases.
+•	Collaborated with Google Developers Group Toronto and NVIDIA to lead hands-on workshops on Google Cloud technologies and NVIDIA AI frameworks, empowering participants to build scalable cloud-native applications and explore GPU-accelerated machine learning workflows. Delivered technical content to diverse audiences, enhancing community engagement and upskilling over 200 attendees.
+
+Consultant
+Brainwork & Interlink Connectivity – Toronto, Ontario | November 2022 – Present | (https://brainwork.ca, https://interlinkconnectivity.com)
+•	As a Project Engineer specializing in IT services and cybersecurity, served as first responder for incidents and helpdesk tickets across technology firms like Edgetch and financial institutions including Florence Wealth, Gravitas Financial, and Foregrowth. Implemented enterprise-grade security protocols and managed cloud infrastructure across Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP). Responsibilities included provisioning and configuring virtual machines, storage accounts, IAM policies, and firewall rules; automating deployments using Terraform and Bash scripting; and conducting vulnerability scans with tools like Nessus and OWASP ZAP. This role deepened expertise in cloud resource orchestration, multi-cloud security, and real-time incident response across hybrid environments.
+•	Wrote business and technical proposals to secure contracts and public sector funding, including successful grant applications for CRTC broadband initiatives and DriveTest Canada projects. Contributed to strategic growth by elevating proposal quality and increasing competitiveness in public tenders.
+
+Project Manager / Tech Lead / Senior Software Engineer / 
+Dalisoft Technologies – India | www.dalisoft.co.in | May 2020 – October 2022
+•	Acted as Project Manager for key deployments with CNH Industrial and Bajaj, overseeing requirements gathering, sprint planning, stakeholder communication, and cross-functional team coordination, resulting in on-time delivery and successful system adoption.
+•	Led the end-to-end development of database-driven desktop, web, mobile, and IoT applications for Industry 4.0 solutions across advanced manufacturing environments. Delivered customized solutions for major clients such as Bajaj Automobiles, CNH Industrial, DS Group, Keihin FIE, KTM, Honda, LS Cables, and Ather Energy.
+•	Designed and delivered high-impact corporate presentations and demo systems for technical workshops, industry events, and client onboarding sessions, enhancing engagement and business development outcomes.
+
+Project Manager
+Techdinamics Inc. – Mississauga, Ontario | www.techdinamics.com | September 2019 – April 2020
+•	Led supply chain automation and software integration projects for Smart Fulfillment, consistently delivering 10–20 client deployments per week across warehouse, logistics, and accounting systems.
+•	Managed end-to-end project lifecycles—requirements gathering, planning, execution, and delivery—using Agile methodologies, SDLC principles, and DevOps practices.
+•	Directed technical teams in integrating WMS, 3PL, and financial systems using API and EDI standards, resolving complex data flow issues and enabling seamless interoperability.
+•	Contributed to the development and enhancement of proprietary logistics platforms including TechSHIP, TechTrack, and TechOMS, improving functionality, scalability, and user experience.
+•	Applied expertise in SQL, data warehousing, and system architecture to optimize integration efficiency and client onboarding speed, strengthening customer satisfaction and operational resilience.
+
+Software Engineer
+Iteranium – Remote / Toronto | www.iteranium.com |October 2015 – August 2019
+•	Built internal analytics software and a centralized knowledgebase for RobecoSAM, a Swiss hedge fund, enabling analysts to query financial datasets, generate reports, and share investment insights across teams securely and efficiently.
+•	Developed and deployed full-stack web application modules for Material, Warehouse, and Manufacturing Management systems used by enterprise clients such as Walmart and TrueCommerce, improving supply chain visibility and operational efficiency.
+•	Built e-commerce websites for the Food Processing and Retail sectors, integrating secure payment gateways, customer portals, and real-time order management for clients including resulting in faster transaction cycles and improved customer engagement.
+
+Academic Assistant
+Toronto Metropolitan University (Data Science Labs) – Toronto, Ontario | www.torontomu.ca | October 2013 – October 2014
+•	Contributed to the Ontario Smart Cities Project, identifying opportunities where smart technologies could enhance urban infrastructure, sustainability, and service delivery.
+•	Supported the IESO Smart Grid Project by performing web scraping and data extraction from the IESO website, followed by trend analysis in R and RStudio to uncover regional electricity consumption patterns.
+•	Assisted in a large-scale Sentiment Analysis Project, processing and analyzing over 8 TB of text data provided by IBM using big data technologies such as Hadoop, uncovering public sentiment trends for large-scale social analytics.
+
+Business Analyst (Financial Analyst Role)
+Evalueserve – India | www.evalueserve.com | February 2011 – September 2011
+•	Used Python to extract and analyze financial performance data from SEC filings (10-K, 10-Q), enabling data-driven insights for equity research and investment strategy at Evalueserve.
+Graduate Engineer 
+Punj Lloyd – India | www.punjlloyd.com | May 2009 – February 2011
+•	Contributed to large-scale engineering projects in the energy and infrastructure sectors, supporting design, planning, and execution activities across multidisciplinary teams.
+•	Awarded Employee of the Year (2009–2010) for exceptional performance, commitment to project timelines, and cross-functional collaboration.
+
+Certifications
+Cloud Computing
+•	Google Cloud Certified – Professional Cloud Architect
+•	Google Cloud Certified – Associate Cloud Developer
+•	Microsoft Certified – Azure Administrator (AZ-104)
+•	Microsoft Certified – Azure DevOps Engineer Expert (AZ-400)
+•	AWS Certified Solutions Architect – Associate
+
+Artificial Intelligence & Machine Learning
+•	NVIDIA Certified – Deep Learning Institute (DLI)
+•	DeepLearning.AI – Deep Learning Specialization
+
+Cybersecurity
+•	ISC2 Certified in Cybersecurity (CC)
+•	ACCES Employment – Certified in Cybersecurity – Bridging Program for Newcomers / New Permanent Residents
+
+Software & Web Development
+•	META Certified Front-End Developer
+•	META Certified Back-End Developer
+
+Project & Business Management
+•	Project Management Professional (PMP) – Project Management Institute (PMI)
+•	Fintech - Toronto Metropolitan University & Lighthouse Labs – Bridging Program for Newcomers / New Permanent Residents
+
+Awards and Leadership
+•	TEDx Host – Led and moderated a TEDx event, curating and presenting global ideas on innovation, leadership, and social impact.  
+•	Campus Director, Hult Prize Foundation – Spearheaded the world’s largest student entrepreneurship competition at campus level; backed by the Clinton Foundation and Bill Gates, the Hult Prize is widely regarded as the “Nobel Prize for Students.”  
+•	Academic & Leadership Awards – Honored for excellence in academics, innovation, and mentorship across institutional and industry platforms.  
+•	Alumnus, Founder Institute | Ryerson Venture Zone | Seneca HELIX – Completed accelerator programs known for fostering startup leadership and venture creation in technology and innovation ecosystems.
+
+References
+

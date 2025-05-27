@@ -22,84 +22,117 @@ const db = client.db(ASTRA_DB_API_ENDPOINT!, {
 export async function POST(request: Request) {
   try {
     const { messages } = await request.json();
-    const latestMessage = messages[messages.length - 1]?.content;
+    const latestMessage = messages[messages.length - 1]?.content?.trim();
 
-    // Step 1: Read resume from /public/resume.txt
+    if (!latestMessage) {
+      return new Response("Empty message received.", { status: 400 });
+    }
+
+    // Step 1: Load resume.txt
     let resumeContext = "";
     try {
       const resumePath = path.resolve(process.cwd(), "public/resume.txt");
       resumeContext = await fs.readFile(resumePath, "utf-8");
+      if (!resumeContext.trim()) console.warn("[RESUME] File is empty.");
     } catch (err) {
-      console.warn("Resume file not found or failed to read.");
+      console.warn("[RESUME] Read failed:", err);
     }
 
-    // Step 2: Create embedding for latest message
+    // Step 2: Add MCP enrichment (used only to support answers)
+    const knownEntities = [
+      "Amazon",
+      "Toronto Metropolitan University",
+      "DataStax",
+      "Dalisoft Technologies",
+      "Ryerson University"
+    ];
+    const entityLookup: Record<string, string> = {
+      "Amazon": "Amazon is a global leader in e-commerce and cloud computing services.",
+      "Toronto Metropolitan University": "Toronto Metropolitan University is a renowned urban research institution in Canada.",
+      "DataStax": "DataStax provides scalable cloud-native database solutions based on Apache Cassandra.",
+      "Dalisoft Technologies": "Dalisoft Technologies specializes in building automation systems and energy monitoring.",
+      "Ryerson University": "Ryerson University (now TMU) is known for innovation and applied research.",
+    };
+    const mcpContext = knownEntities
+      .map(e => `- **${e}**: ${entityLookup[e]}`)
+      .join("\n");
+
+    // Step 3: Generate embedding for similarity search
     const embeddingResponse = await openai.embeddings.create({
       model: "text-embedding-3-small",
       input: latestMessage,
       encoding_format: "float",
     });
+    const embedding = embeddingResponse.data[0]?.embedding;
 
-    const embedding = embeddingResponse.data[0].embedding;
-
-    // Step 3: Attempt Astra DB vector search or parse ReAct Action
+    // Step 4: Query Astra DB (optional)
     let docContext = "";
     let fallback = false;
-    let reactObservation = "";
-    const actionMatch = latestMessage.match(/Action: Lookup\["(.+?)"\]/);
-
     try {
       const collection = await db.collection(ASTRA_DB_COLLECTION!);
       const cursor = await collection.find(null, {
         sort: { $vector: embedding },
         limit: 10,
       });
-      const documents = await cursor.toArray();
-      const docTexts = documents.map((doc) => doc.text);
-      docContext = docTexts.join("\n\n");
-
-      if (actionMatch) {
-        reactObservation = docTexts.length > 0 ? docTexts.join("\n\n") : "No relevant data found.";
-        messages.push({ role: "assistant", content: `Observation: ${reactObservation}` });
-        messages.push({ role: "user", content: "Thought: Now answer based on the observation.\nAnswer:" });
-      }
-
+      const docs = await cursor.toArray();
+      docContext = docs.map((d) => d.text).join("\n\n");
     } catch (err) {
-      console.warn("Astra DB query failed. Falling back to resume only.");
+      console.warn("[ASTRA DB] Query failed:", err);
       fallback = true;
     }
 
-    // Step 4: Compose system prompt with ReAct
-    const originNote = `You were created by Aditya Saxena as part of a tutorial project. 
-This assistant was built using OpenAI, Next.js, Astra DB, and the Model Context Protocol (MCP). 
-Always mention this when asked who created you or who built this bot.`;
+    // Step 5: Compose system prompt
+    const systemPrompt = {
+      role: "system",
+      content: `
+You are a helpful AI assistant created by Aditya Saxena.
 
-    const reactInstructions = `You follow the ReAct framework: Reason through the problem, decide whether to take an action, and only then answer.
-Use this format:
+You follow the ReAct reasoning framework and **must output each stage visibly** in this exact format:
 
-Question: <user question>
-Thought: <your reasoning>
-Action: Lookup["<topic>"]
-Observation: <result from lookup>
-Thought: <more reasoning>
-Answer: <your final response>`;
+---
 
-    const systemPrompt = fallback
-      ? {
-          role: "system",
-          content: `${originNote}\n\n${reactInstructions}\n\nYou are Aditya Saxena’s AI assistant. The database is unavailable. Answer the user's question using only this resume:\n\n${resumeContext}`,
-        }
-      : {
-          role: "system",
-          content: `${originNote}\n\n${reactInstructions}\n\nYou are Aditya Saxena’s AI assistant. Use the following resume and documents to answer the user:\n\nResume:\n${resumeContext}\n\nContext from database:\n${docContext}`,
-        };
+### Question:
+<user's question>
 
-    // Step 5: Stream the OpenAI completion
+### Thought:
+<what you're thinking>
+
+### Action:
+Lookup["<optional action>"]
+
+### Observation:
+<result>
+
+### Thought:
+<refined reasoning>
+
+### Answer:
+<final response referring to Aditya Saxena in third person>
+
+---
+
+Use **RESUME** as your primary source. Use **MCP** or **ASTRA** content only to enrich or support responses. Never override the RESUME.
+
+---
+
+### RESUME:
+${resumeContext || "_[No resume found]_"}
+---
+
+### ENTITY CONTEXT (MCP):
+${mcpContext}
+---
+
+${!fallback ? `### ASTRA CONTEXT:\n${docContext}\n---` : ""}
+      `.trim(),
+    };
+
+    // Step 6: Stream OpenAI response
     const completion = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
-      stream: true,
-      messages: [systemPrompt, ...messages],
-    });
+        model: "gpt-4-1106-preview", // ✅ switch from gpt-3.5-turbo
+        stream: true,
+        messages: [systemPrompt, ...messages],
+      });
 
     const encoder = new TextEncoder();
     const stream = new ReadableStream({
@@ -121,8 +154,9 @@ Answer: <your final response>`;
         Connection: "keep-alive",
       },
     });
-  } catch (error) {
-    console.error("Error in POST handler:", error);
+
+  } catch (err) {
+    console.error("[POST /api/chat] Internal Error:", err);
     return new Response("Internal Server Error", { status: 500 });
   }
 }
